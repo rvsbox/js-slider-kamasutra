@@ -6,3 +6,6 @@ OOP - объектно ориентированное программирова
 ------------------------
 a21 FN Test
 a21 FN Test button
+a21 FN Finish
+
+a22 OOP Added object
