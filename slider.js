@@ -1,5 +1,6 @@
 function getNewSlider() {
-    let newSlider = {
+     // создали объект
+    return {
         imagesPaths: [],
         currentImageIndex: 0,
 
@@ -20,7 +21,7 @@ function getNewSlider() {
                 that.onShowPrevBtnClick(e);
             });
 
-            this.showNextBtn.addEventListener("click", function (e){
+            this.showNextBtn.addEventListener("click", function (e) {
                 that.onShowNextBtnClick(e);
             });
 
@@ -52,9 +53,7 @@ function getNewSlider() {
                 this.showNextBtn.disabled = true;
             }
         }
-    }; // создали объект
-
-    return newSlider; // возвращаем созданный объект
+    }; // возвращаем созданный объект
 }
 
 
