@@ -6,7 +6,10 @@ let slider1 = {
     slideImage: document.getElementById("slide-img"),
 
     start: function () {
-        this.showPrevBtn.addEventListener("click", this.onShowPrevBtnClick);
+        this.showPrevBtn.addEventListener("click", function (e) {
+            console.log("test");
+            //this.onShowPrevBtnClick
+        });
         this.showNextBtn.addEventListener("click", this.onShowNextBtnClick);
 
         this.imagesPaths.push("images/ninja.jpg");
@@ -15,7 +18,7 @@ let slider1 = {
         this.imagesPaths.push("images/bat-man.jpg");
 
         this.slideImage.src = this.imagesPaths[this.currentImageIndex];
-        this.showPrevBtn.disabled = true;
+        //this.showPrevBtn.disabled = true;
     },
 
     onShowPrevBtnClick: function (e) {
@@ -24,7 +27,7 @@ let slider1 = {
         this.showNextBtn.disabled = false;
 
         if (this.currentImageIndex === 0) {
-            showPrevBtn.disabled = true;
+            this.showPrevBtn.disabled = true;
         }
     },
 
