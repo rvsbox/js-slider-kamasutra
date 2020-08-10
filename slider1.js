@@ -6,10 +6,10 @@ let slider1 = {
     showNextBtn: null,
     slideImage: null,
 
-    start: function (el) {
+    start: function (elId) {
         let that = this;
 
-        // let el = document.getElementById("slider1"); // el - element
+        let el = document.getElementById(elId); // el - element
 
         this.showPrevBtn = el.querySelector(".show-prev-btn");
         this.showNextBtn = el.querySelector(".show-next-btn");
