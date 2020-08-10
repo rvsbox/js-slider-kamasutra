@@ -6,11 +6,15 @@ let slider1 = {
     slideImage: document.getElementById("slide-img"),
 
     start: function () {
+        let that = this;
+
         this.showPrevBtn.addEventListener("click", function (e) {
-            console.log("test");
-            //this.onShowPrevBtnClick
+            that.onShowPrevBtnClick(e);
         });
-        this.showNextBtn.addEventListener("click", this.onShowNextBtnClick);
+
+        this.showNextBtn.addEventListener("click", function (e){
+            that.onShowNextBtnClick(e);
+        });
 
         this.imagesPaths.push("images/ninja.jpg");
         this.imagesPaths.push("images/jubei.gif");
@@ -18,7 +22,7 @@ let slider1 = {
         this.imagesPaths.push("images/bat-man.jpg");
 
         this.slideImage.src = this.imagesPaths[this.currentImageIndex];
-        //this.showPrevBtn.disabled = true;
+        this.showPrevBtn.disabled = true;
     },
 
     onShowPrevBtnClick: function (e) {
@@ -40,5 +44,4 @@ let slider1 = {
             this.showNextBtn.disabled = true;
         }
     }
-
 };
