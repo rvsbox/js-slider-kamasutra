@@ -1,58 +1,61 @@
-function creatNewSlider() {
-    return {
-        imagesPaths: [],
-        currentImageIndex: 0,
+let sliderFactory = {
+    creatNewSlider: function () {
+        return {
+            imagesPaths: [],
+            currentImageIndex: 0,
 
-        showPrevBtn: null,
-        showNextBtn: null,
-        slideImage: null,
+            showPrevBtn: null,
+            showNextBtn: null,
+            slideImage: null,
 
-        start: function (elId) {
-            let that = this;
+            start: function (elId) {
+                let that = this;
 
-            let el = document.getElementById(elId);
+                let el = document.getElementById(elId);
 
-            this.showPrevBtn = el.querySelector(".show-prev-btn");
-            this.showNextBtn = el.querySelector(".show-next-btn");
-            this.slideImage = el.querySelector(".slide-img");
+                this.showPrevBtn = el.querySelector(".show-prev-btn");
+                this.showNextBtn = el.querySelector(".show-next-btn");
+                this.slideImage = el.querySelector(".slide-img");
 
-            this.showPrevBtn.addEventListener("click", function (e) {
-                that.onShowPrevBtnClick(e);
-            });
+                this.showPrevBtn.addEventListener("click", function (e) {
+                    that.onShowPrevBtnClick(e);
+                });
 
-            this.showNextBtn.addEventListener("click", function (e) {
-                that.onShowNextBtnClick(e);
-            });
+                this.showNextBtn.addEventListener("click", function (e) {
+                    that.onShowNextBtnClick(e);
+                });
 
-            this.imagesPaths.push("images/ninja.jpg");
-            this.imagesPaths.push("images/jubei.gif");
-            this.imagesPaths.push("images/moon.jpg");
-            this.imagesPaths.push("images/bat-man.jpg");
+                this.imagesPaths.push("images/ninja.jpg");
+                this.imagesPaths.push("images/jubei.gif");
+                this.imagesPaths.push("images/moon.jpg");
+                this.imagesPaths.push("images/bat-man.jpg");
 
-            this.slideImage.src = this.imagesPaths[this.currentImageIndex];
-            this.showPrevBtn.disabled = true;
-        },
-
-        onShowPrevBtnClick: function (e) {
-            this.currentImageIndex--;
-            this.slideImage.src = this.imagesPaths[this.currentImageIndex];
-            this.showNextBtn.disabled = false;
-
-            if (this.currentImageIndex === 0) {
+                this.slideImage.src = this.imagesPaths[this.currentImageIndex];
                 this.showPrevBtn.disabled = true;
-            }
-        },
+            },
 
-        onShowNextBtnClick: function (e) {
-            this.currentImageIndex++;
-            this.slideImage.src = this.imagesPaths[this.currentImageIndex];
-            this.showPrevBtn.disabled = false;
+            onShowPrevBtnClick: function (e) {
+                this.currentImageIndex--;
+                this.slideImage.src = this.imagesPaths[this.currentImageIndex];
+                this.showNextBtn.disabled = false;
 
-            if (this.currentImageIndex === (this.imagesPaths.length - 1)) {
-                this.showNextBtn.disabled = true;
+                if (this.currentImageIndex === 0) {
+                    this.showPrevBtn.disabled = true;
+                }
+            },
+
+            onShowNextBtnClick: function (e) {
+                this.currentImageIndex++;
+                this.slideImage.src = this.imagesPaths[this.currentImageIndex];
+                this.showPrevBtn.disabled = false;
+
+                if (this.currentImageIndex === (this.imagesPaths.length - 1)) {
+                    this.showNextBtn.disabled = true;
+                }
             }
-        }
-    };
-}
+        };
+    }
+};
+
 
 
