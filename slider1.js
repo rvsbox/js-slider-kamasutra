@@ -1,1 +1,0 @@
-let slider1 = getNewSlider();

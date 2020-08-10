@@ -1,5 +1,4 @@
-function getNewSlider() {
-     // создали объект
+function creatNewSlider() {
     return {
         imagesPaths: [],
         currentImageIndex: 0,
@@ -11,7 +10,7 @@ function getNewSlider() {
         start: function (elId) {
             let that = this;
 
-            let el = document.getElementById(elId); // el - element
+            let el = document.getElementById(elId);
 
             this.showPrevBtn = el.querySelector(".show-prev-btn");
             this.showNextBtn = el.querySelector(".show-next-btn");
@@ -53,7 +52,7 @@ function getNewSlider() {
                 this.showNextBtn.disabled = true;
             }
         }
-    }; // возвращаем созданный объект
+    };
 }
 
 
