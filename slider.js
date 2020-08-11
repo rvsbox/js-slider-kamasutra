@@ -34,7 +34,7 @@ let sliderFactory = {
                 this.showPrevBtn.disabled = true;
             },
 
-            onShowPrevBtnClick: function (e) {
+            onShowPrevBtnClick: function () {
                 this.currentImageIndex--;
                 this.slideImage.src = this.imagesPaths[this.currentImageIndex];
                 this.showNextBtn.disabled = false;
@@ -44,7 +44,7 @@ let sliderFactory = {
                 }
             },
 
-            onShowNextBtnClick: function (e) {
+            onShowNextBtnClick: function () {
                 this.currentImageIndex++;
                 this.slideImage.src = this.imagesPaths[this.currentImageIndex];
                 this.showPrevBtn.disabled = false;
