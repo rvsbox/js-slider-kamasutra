@@ -51,10 +51,3 @@ function Slider () {
         }
     }
 }
-
-
-let sliderFactory = {
-    creatNewSlider: function () {
-        return new Slider();
-    }
-};
