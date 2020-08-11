@@ -55,7 +55,6 @@ function Slider () {
 
 let sliderFactory = {
     creatNewSlider: function () {
-        let newSlider = new Slider();
-        return newSlider;
+        return new Slider();
     }
 };
