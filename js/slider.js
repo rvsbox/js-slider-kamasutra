@@ -1,14 +1,21 @@
-function Slider () {
-        this.imagesPaths = [];
-        this.currentImageIndex = 0;
-        this.showPrevBtn = null;
-        this.showNextBtn = null;
-        this.slideImage = null;
+function Slider() {
+    this.imagesPaths = [];
+    this.currentImageIndex = 0;
+    this.showPrevBtn = null;
+    this.showNextBtn = null;
+    this.slideImage = null;
 
     this.start = function (elId) {
         let that = this;
 
         let el = document.getElementById(elId);
+
+        el.innerHTML = `    
+            <div class="abc-slider">
+                <button class="show-prev-btn">PREV</button>
+                <img src="" class="slide-img">
+                <button class="show-next-btn">NEXT</button>
+        </div>`;
 
         this.showPrevBtn = el.querySelector(".show-prev-btn");
         this.showNextBtn = el.querySelector(".show-next-btn");
