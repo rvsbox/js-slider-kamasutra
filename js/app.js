@@ -1,7 +1,3 @@
-let slider1 = new Slider();
-// let slider2 = new Slider();
+let slider1 = new SliderView();
 
 slider1.start("slider1");
-// slider2.start("slider2");
-
-// console.log(slider1.imagesPaths);

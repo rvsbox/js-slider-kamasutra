@@ -1,4 +1,4 @@
-function Slider() {
+function SliderView() {
     this.showPrevBtn = null;
     this.showNextBtn = null;
     this.slideImage = null;
@@ -29,11 +29,6 @@ function Slider() {
         this.showNextBtn.addEventListener("click", function (e) {
             that.onShowNextBtnClick(e);
         });
-
-        this._logic.imagesPaths.push("images/ninja.jpg");
-        this._logic.imagesPaths.push("images/jubei.gif");
-        this._logic.imagesPaths.push("images/moon.jpg");
-        this._logic.imagesPaths.push("images/bat-man.jpg");
 
         this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
         this.showPrevBtn.disabled = true;
