@@ -5,6 +5,7 @@ function Slider() {
 
     this._logic = new SliderLogic();
 
+
     this.start = function (elId) {
         let that = this;
 
@@ -19,7 +20,7 @@ function Slider() {
 
         this.showPrevBtn = el.querySelector(".show-prev-btn");
         this.showNextBtn = el.querySelector(".show-next-btn");
-        this._logic.slideImage = el.querySelector(".slide-img");
+        this.slideImage = el.querySelector(".slide-img");
 
         this.showPrevBtn.addEventListener("click", function (e) {
             that.onShowPrevBtnClick(e);
@@ -34,13 +35,13 @@ function Slider() {
         this._logic.imagesPaths.push("images/moon.jpg");
         this._logic.imagesPaths.push("images/bat-man.jpg");
 
-        this._logic.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
+        this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
         this.showPrevBtn.disabled = true;
     };
 
     this.onShowPrevBtnClick = function (e) {
         this._logic.currentImageIndex--;
-        this._logic.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
+        this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
         this.showNextBtn.disabled = false;
 
         if (this._logic.currentImageIndex === 0) {
@@ -50,7 +51,7 @@ function Slider() {
 
     this.onShowNextBtnClick = function (e) {
         this._logic.currentImageIndex++;
-        this._logic.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
+        this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
         this.showPrevBtn.disabled = false;
 
         if (this._logic.currentImageIndex === (this._logic.imagesPaths.length - 1)) {
