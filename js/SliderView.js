@@ -30,26 +30,26 @@ function SliderView() {
             that.onShowNextBtnClick(e);
         });
 
-        this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
+        this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showPrevBtn.disabled = true;
     };
 
     this.onShowPrevBtnClick = function (e) {
         this._logic.currentImageIndex--;
-        this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
+        this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showNextBtn.disabled = false;
 
-        if (this._logic.currentImageIndex === 0) {
+        if (this._logic.doYouHaveNoPrevImage()) {
             this.showPrevBtn.disabled = true;
         }
     };
 
     this.onShowNextBtnClick = function (e) {
         this._logic.currentImageIndex++;
-        this.slideImage.src = this._logic.imagesPaths[this._logic.currentImageIndex];
+        this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showPrevBtn.disabled = false;
 
-        if (this._logic.currentImageIndex === (this._logic.imagesPaths.length - 1)) {
+        if (this._logic.doYouHaveNoNextImage()) {
             this.showNextBtn.disabled = true;
         }
     }
