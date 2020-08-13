@@ -1,6 +1,7 @@
 function SliderLogic() {
     this._imagesPaths = [];
     this._currentImageIndex = 0;
+    this._dataService = new SliderDataService();
 
     this.getCurrentImageUrl = function () {
         return this._imagesPaths[this._currentImageIndex];
@@ -28,11 +29,5 @@ function SliderLogic() {
         }
     }
 
-    this._imagesPaths.push("images/ninja.jpg");
-    this._imagesPaths.push("images/jubei.gif");
-    this._imagesPaths.push("images/moon.jpg");
-    this._imagesPaths.push("images/bat-man.jpg");
+    this._imagesPaths = this._dataService.getUrls();
 }
-
-// let sliderLogic = new SliderLogic();
-// let url = sliderLogic.getNextImageUrl();
