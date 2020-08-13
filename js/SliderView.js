@@ -2,7 +2,6 @@ function SliderView() {
     this.showPrevBtn = null;
     this.showNextBtn = null;
     this.slideImage = null;
-    this._dataService = new SliderDataService();
 
     this._logic = new SliderLogic();
 
