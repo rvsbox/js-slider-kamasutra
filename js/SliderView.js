@@ -16,7 +16,7 @@ function SliderView() {
                 <button class="show-prev-btn">PREV</button>
                 <img src="" class="slide-img">
                 <button class="show-next-btn">NEXT</button>
-        </div>`;
+            </div>`;
 
         this.showPrevBtn = el.querySelector(".show-prev-btn");
         this.showNextBtn = el.querySelector(".show-next-btn");
@@ -35,21 +35,23 @@ function SliderView() {
     };
 
     this.onShowPrevBtnClick = function (e) {
-        this._logic.currentImageIndex--;
+        this._logic.activatePrevImage();
+
         this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showNextBtn.disabled = false;
 
-        if (this._logic.doYouHaveNoPrevImage()) {
+        if (!this._logic.canMovePrev()) {
             this.showPrevBtn.disabled = true;
         }
     };
 
     this.onShowNextBtnClick = function (e) {
-        this._logic.currentImageIndex++;
+        this._logic.activateNextImage();
+
         this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showPrevBtn.disabled = false;
 
-        if (this._logic.doYouHaveNoNextImage()) {
+        if (!this._logic.canMoveNext()) {
             this.showNextBtn.disabled = true;
         }
     }
