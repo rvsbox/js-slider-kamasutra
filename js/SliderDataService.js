@@ -3,7 +3,7 @@ function SliderDataService() {
     this.imagesUrls = [];
 
     this.getUrls = function (successCallback) {
-        let _imagesUrls = [];
+        // let _imagesUrls = [];
 
         this.imagesUrls.push("images/ninja.jpg");
         this.imagesUrls.push("images/jubei.gif");

@@ -31,15 +31,10 @@ function SliderLogic() {
         }
     }
 
-    this._onUrlsGet = function () {
-        // console.log("we get urls");
-        console.log(this._dataService.imagesUrls);
+    this.init = function (callback){
+        this._dataService.getUrls(function (){
+            callback();
+        });
+
     }
-
-    // this._imagesUrls =
-    this._dataService.getUrls(function (){
-        that._onUrlsGet();
-    });
-
-    console.log(this._dataService.imagesUrls);
 }
