@@ -52,7 +52,7 @@ function SliderView() {
     this.onShowNextBtnClick = function () {
         this._logic.activateNextImage();
 
-
+        this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showPrevBtn.disabled = false;
 
         if (!this._logic.canMoveNext()) {
