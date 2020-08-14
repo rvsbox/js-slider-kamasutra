@@ -44,5 +44,6 @@ sl02 OOP Добавили конструктор SliderDataService, которы
 sl02 OOP Рефакторинг
 
 sl03 OOP Для демонстрации выполнена задержка заполнения массива в SliderDataService.js
+sl03 OOP Рефакторинг. Теория
 
 

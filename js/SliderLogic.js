@@ -29,5 +29,12 @@ function SliderLogic() {
         }
     }
 
-    this._imagesPaths = this._dataService.getUrls();
+    this.onUrlsGet = function () {
+        console.log("we get urls");
+    }
+
+    // this._imagesPaths =
+    this._dataService.getUrls(this.onUrlsGet);
+
+    console.log(this._imagesPaths);
 }
