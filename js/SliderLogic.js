@@ -40,4 +40,6 @@ function SliderLogic() {
     this._dataService.getUrls(function (){
         that._onUrlsGet();
     });
+
+    console.log(this._dataService.imagesUrls);
 }
