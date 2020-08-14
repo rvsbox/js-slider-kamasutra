@@ -1,10 +1,12 @@
 function SliderLogic() {
-    this._imagesPaths = [];
+    let that = this;
+
+    this._imagesUrls = [];
     this._currentImageIndex = 0;
     this._dataService = new SliderDataService();
 
     this.getCurrentImageUrl = function () {
-        return this._imagesPaths[this._currentImageIndex];
+        return this._imagesUrls[this._currentImageIndex];
     }
 
     this.canMovePrev = function () {
@@ -13,7 +15,7 @@ function SliderLogic() {
     }
 
     this.canMoveNext = function () {
-        let weAreOnTheRightBorder = this._currentImageIndex === (this._imagesPaths.length - 1);
+        let weAreOnTheRightBorder = this._currentImageIndex === (this._imagesUrls.length - 1);
         return !weAreOnTheRightBorder;
     }
 
@@ -34,6 +36,8 @@ function SliderLogic() {
         console.log(this._dataService.imagesUrls);
     }
 
-    // this._imagesPaths =
-    this._dataService.getUrls(this._onUrlsGet);
+    // this._imagesUrls =
+    this._dataService.getUrls(function (){
+        that._onUrlsGet();
+    });
 }
