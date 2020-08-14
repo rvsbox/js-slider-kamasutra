@@ -3,7 +3,8 @@ function SliderLogic() {
 
     this._imagesUrls = [];
     this._currentImageIndex = 0;
-    this._dataService = new SliderDataService();
+    // this._dataService = new SliderDataService();
+    this._dataService = new SliderAjaxDataService();
 
     this.getCurrentImageUrl = function () {
         return this._imagesUrls[this._currentImageIndex];
