@@ -29,12 +29,11 @@ function SliderLogic() {
         }
     }
 
-    this.onUrlsGet = function () {
-        console.log("we get urls");
+    this._onUrlsGet = function () {
+        // console.log("we get urls");
+        console.log(this._dataService.imagesUrls);
     }
 
     // this._imagesPaths =
-    this._dataService.getUrls(this.onUrlsGet);
-
-    console.log(this._imagesPaths);
+    this._dataService.getUrls(this._onUrlsGet);
 }
