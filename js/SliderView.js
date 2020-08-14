@@ -1,5 +1,5 @@
 function SliderView() {
-    let that = this;
+    const that = this;
 
     this.showPrevBtn = null;
     this.showNextBtn = null;
@@ -9,7 +9,6 @@ function SliderView() {
 
 
     this.start = function (elId) {
-
 
         let el = document.getElementById(elId);
 
@@ -32,7 +31,6 @@ function SliderView() {
             that.onShowNextBtnClick(e);
         });
 
-        // this.slideImage.src = this._logic.getCurrentImageUrl();
         this.showPrevBtn.disabled = true;
 
         this._logic.init(function () {
@@ -40,7 +38,7 @@ function SliderView() {
         });
     };
 
-    this.onShowPrevBtnClick = function (e) {
+    this.onShowPrevBtnClick = function () {
         this._logic.activatePrevImage();
 
         this.slideImage.src = this._logic.getCurrentImageUrl();
@@ -51,7 +49,7 @@ function SliderView() {
         }
     };
 
-    this.onShowNextBtnClick = function (e) {
+    this.onShowNextBtnClick = function () {
         this._logic.activateNextImage();
 
 

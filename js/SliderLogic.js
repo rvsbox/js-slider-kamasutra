@@ -33,6 +33,9 @@ function SliderLogic() {
 
     this.init = function (callback){
         this._dataService.getUrls(function (){
+
+            that._imagesUrls = that._dataService.imagesUrls;
+
             callback();
         });
 
