@@ -32,12 +32,12 @@ function SliderLogic() {
     }
 
     this.init = function (callback){
-        this._dataService.getUrls(function (){
+        // add new sub object
+        this._dataService.getUrls(function (urls){
 
-            that._imagesUrls = that._dataService.imagesUrls;
+            that._imagesUrls = urls;
 
             callback();
         });
-
     }
 }
