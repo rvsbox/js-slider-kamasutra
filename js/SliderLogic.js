@@ -3,8 +3,10 @@ function SliderLogic() {
 
     this._imagesUrls = [];
     this._currentImageIndex = 0;
-    // this._dataService = new SliderDataService();
-    this._dataService = new SliderAjaxDataService();
+
+    // выбрать один из вариантов ниже
+    // this._dataService = new SliderDataService(); // картинки на локальном ПК
+    this._dataService = new SliderAjaxDataService(); // картинки на сервере
 
     this.getCurrentImageUrl = function () {
         return this._imagesUrls[this._currentImageIndex];
